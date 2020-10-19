@@ -27,29 +27,11 @@ client.on('message', message => {
 			message.edit("**Pong!** Bot Latency : ``" + ping + "ms``")
 		})
 	}
-});
-
-// ok next is im going to make a example of fs
-client.on('message', message => {
-	const readsystem = fs.readFileSync("./example.txt", "utf8");
 	if (message.content == "/example") {
+		const readsystem = fs.readFileSync("./example.txt", "utf8");
 		message.channel.send(readsystem)
 	}
-	
 });
-
-client.on('message', message => {
-    if (message.content === "/avatar") {
-		const embed = new RichEmbed()
-		.setTitle('Avatar!')
-		.setAuthor("Your Avatar", message.author.avatarURL)
-		.setImage(message.author.avatarURL)
-		.setColor('RANDOM')
-		.setDescription('Avatar URL')
-      message.reply(embed)
-    }
-});
-
 
 
 
